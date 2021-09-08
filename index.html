@@ -7,6 +7,520 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>It's test</h1>
+    <h1>Hexagom</h1>
+    <style>
+      /*  html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+        }
+        
+        body,
+        html {
+            height: 100%;
+        }
+        
+        img,
+        fieldset,
+        a img {
+            border: none;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            -webkit-appearance: none;
+        }
+        
+        input[type="submit"],
+        button {
+            cursor: pointer;
+        }
+        
+        input[type="submit"]::-moz-focus-inner,
+        button::-moz-focus-inner {
+            padding: 0;
+            border: 0;
+        }
+        
+        textarea {
+            overflow: auto;
+        }
+        
+        input,
+        button {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        
+        div,
+        input,
+        textarea,
+        select,
+        button,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a,
+        span,
+        a:focus {
+            outline: none;
+        }
+        
+        ul,
+        ol {
+            list-style-type: none;
+        } */
+        
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            * {
+                -webkit-text-size-adjust: none;
+            }
+        }
+        
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        html {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        * {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        *:before,
+        *:after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        .page {
+            max-width: 1200px;
+            min-height:100vh;
+            margin: 0 auto;
+        }
+        
+        .bg {
+            background:  url(https://termall.com.ua/wp-content/uploads/2018/07/bg.jpg) no-repeat center center;
+            background-size: cover;
+            height: 661px;
+            opacity: 1;
+        }
+        
+        .section {
+            position: relative;
+            width: 640px;
+            height: 612px;
+            margin: 0 auto;
+        }
+        
+        .section a,
+        .section a:link,
+        .section a:visited,
+        .section a:active,
+        .section a:hover {
+            text-decoration: none;
+            color: transparent;
+        }
+        
+        a:link .hex {
+            position: absolute;
+            width: 200px;
+            text-align: center;
+        }
+        
+        a:link .hex:after,
+        a:link .hex:before,
+        a:hover .hex:after,
+        a:hover .hex:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* border-right: 1px solid #ffce2b;
+            border-left: 1px solid #ffce2b; */
+        }
+        
+        a:link .hex:after {
+            -ms-transform: rotate(-60deg);
+            -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+        }
+        
+        a:link .hex:before {
+            -ms-transform: rotate(60deg);
+            -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+        }
+        
+        a:link .hex--one {
+            top: 100px;
+            left: 110px;
+            background: #ffce2b url(https://termall.com.ua/wp-content/uploads/2018/07/hex01.png) no-repeat left center;
+            /* background: #ffce2b url(images/hex01.png) no-repeat left center; */
+            background-size: cover;
+        }
+        
+        a:link .hex--two {
+            top: 100px;
+            left: 330px;
+            background: #ffce2b url(https://termall.com.ua/wp-content/uploads/2018/07/hex02.png) no-repeat left center;
+            /* background: #ffce2b url(images/hex02.png) no-repeat left center; */
+            background-size: cover;
+        }
+        
+        a:link .hex--three {
+            top: 290px;
+            left: 0px;
+            background: #ffce2b url(https://termall.com.ua/wp-content/uploads/2018/07/hex03.png) no-repeat left center;
+            /* background: #ffce2b url(images/hex03.png) no-repeat left center; */
+            background-size: cover;
+        }
+        
+        a:link .hex--four {
+            top: 290px;
+            left: 220px;
+            background: url(https://termall.com.ua/wp-content/uploads/2018/07/hex04.png) no-repeat left center;
+            
+            background-size: cover;
+            z-index: 0;
+        }
+        
+        a:link .hex--five {
+            top: 290px;
+            left: 440px;
+            background: #ffce2b url(https://termall.com.ua/wp-content/uploads/2018/07/hex05.png) no-repeat left center;
+            /* background: #ffce2b url(images/hex05.png) no-repeat left center; */
+            background-size: cover;
+        }
+        
+        a:link .hex--six {
+            top: 480px;
+            left: 110px;
+            background: #ffce2b url(https://termall.com.ua/wp-content/uploads/2018/07/hex06.png) no-repeat left center;
+            /* background: #ffce2b url(images/hex06.png) no-repeat left center; */
+            background-size: cover;
+        }
+        
+        a:link .hex--seven {
+            top: 480px;
+            left: 330px;
+            background: #ffce2b url(https://termall.com.ua/wp-content/uploads/2018/07/hex07.png) no-repeat left center;
+            /* background: #ffce2b url(images/hex07.png) no-repeat left center; */
+            background-size: cover;
+        }
+        
+        .hex .bg1,
+        .hex .bg2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: inherit;
+        }
+        
+        .hex .bg1:after,
+        .hex .bg2:after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            background: inherit;
+        }
+        
+        .hex .bg1 {
+            -ms-transform: rotate(60deg);
+            -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+        }
+        
+        .hex .bg1:after {
+            -ms-transform: rotate(-60deg);
+            -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+        }
+        
+        .hex .bg2 {
+            -ms-transform: rotate(-60deg);
+            -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+        }
+        
+        .hex .bg2:after {
+            -ms-transform: rotate(60deg);
+            -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+        }
+        
+        .hex--four h3 {
+            z-index: 4;
+        }
+        
+        a:link h3 {
+            font: 700 20px/30px Roboto, sans-serif;
+        }
+        
+        a:link h3 span {
+            font: 300 15px/16px Roboto, sans-serif;
+        }
+        
+        .hex--one h4,
+        .hex--two h4,
+        .hex--three h4,
+        .hex--five h4,
+        .hex--six h4,
+        .hex--seven h4 {
+            position: absolute;
+            z-index: 1;
+            margin: 85px 5px 0;
+            line-height: 18px;
+            color: #040404;
+            text-align: center;
+            font: 400 19px/24px Roboto, sans-serif;
+        }
+        
+        a:hover .hex--one,
+        a:hover .hex--one:after,
+        a:hover .hex--one:before,
+        a:hover .hex--two,
+        a:hover .hex--two:after,
+        a:hover .hex--two:before,
+        a:hover .hex--three,
+        a:hover .hex--three:after,
+        a:hover .hex--three:before,
+        a:hover .hex--five,
+        a:hover .hex--five:after,
+        a:hover .hex--five:before,
+        a:hover .hex--six,
+        a:hover .hex--six:after,
+        a:hover .hex--six:before,
+        a:hover .hex--seven,
+        a:hover .hex--seven:after,
+        a:hover .hex--seven:before {
+            background: #fff;
+            /* border-right: 1px solid #ffce2b;
+            border-left: 1px solid #ffce2b; */
+        }
+        
+        a:hover .hex--one h4,
+        a:hover .hex--two h4,
+        a:hover .hex--three h4,
+        a:hover .hex--five h4,
+        a:hover .hex--six h4,
+        a:hover .hex--seven h4 {
+            visibility: hidden;
+        }
+        
+        .hex__content {
+            /* border-right: 1px solid #ffce2b;
+            border-left: 1px solid #ffce2b; */
+            display: block;
+            height: 115px;
+            padding: 0 7px;
+            color: #040404;
+        }
+        
+        a:link .hex__content p {
+            z-index: 2;
+            position: absolute;
+            color: #000000;
+            visibility: hidden;
+        }
+        
+        a:hover .hex__content p {
+            width: 94%;
+            display: block;
+            visibility: visible;
+            font: 300 11px/12px Roboto, sans-serif;
+            text-align: justify;
+        }
+        
+        @media only screen and (min-width: 320px) and (max-width: 660px) {
+            .hex,
+            .bg {
+                visibility: hidden;
+                display: none;
+            }
+        }
+    </style>
+    <div class="bg">
+        <div id="hex" class="section">
+            <a href="#hex">
+                <div class="hex hex--one">
+                    <div class="hex__content ">
+                        <h4 class="hex__title">Первые в Украине</h4>
+                        <p class="hex__descr">«TERMALL» - единственная компания которая специализируется на реализации мобильных систем ППУ для теплоизоляции строительных объектов. Мы предлагаем новый и уникальный продукт - напыляемый полиуретановый утеплитель в аэрозольном
+                            баллоне.
+                        </p>
+                    </div>
+                    <div class="bg1"></div>
+                    <div class="bg2"></div>
+                </div>
+            </a>
+            <a href="#hex">
+                <div class="hex hex--two">
+                    <div class="hex__content">
+                        <h4 class="hex__title">Оперативность в работе</h4>
+                        <p class="hex__descr">Благодаря использованию новых технологий по организации бизнес-процессов и управлению персонала, компания работает как слаженный «часовой механизм». Мы ценим время наших клиентов, поэтому скорость выполнения заказов максимальная.</p>
+                    </div>
+                    <div class="bg1"></div>
+                    <div class="bg2"></div>
+                </div>
+            </a>
+            <a href="#hex">
+                <div class="hex hex--three">
+                    <div class="hex__content">
+                        <h4 class="hex__title">Уникальный ассортимент</h4>
+                        <p class="hex__descr">Наши специалисты протестировали продукцию различных производителей и отобрали в ассортимент лучшие образцы напыляемых пенополиуретановых материалов, способных решить самые сложные задачи теплоизоляции различных объектов.</p>
+                    </div>
+                    <div class="bg1"></div>
+                    <div class="bg2"></div>
+                </div>
+            </a>
+            <a href="#hex">
+                <div class="hex hex--four">
+                    <div class="hex__content ">
+                        <h3 class="hex__title">Компания «TERMALL»
+                            <br>
+                            <span>новые решения теплоизоляции</span>
+                        </h3>
+                    </div>
+                    <div class="bg1"></div>
+                    <div class="bg2"></div>
+                </div>
+            </a>
+            <a href="#hex">
+                <div class="hex hex--five">
+                    <div class="hex__content">
+                        <h4 class="hex__title">Лояльность к клиентам</h4>
+                        <p class="hex__descr">Не оставляем без внимания ни одного клиентского запроса и делаем все, чтобы сотрудничество с нашими клиентами было максимально плодотворным. Предоставляем особые условия строителям и торговым организациям, скидки оптовым покупателям.</p>
+                    </div>
+                    <div class="bg1"></div>
+                    <div class="bg2"></div>
+                </div>
+            </a>
+            <a href="#hex">
+                <div class="hex hex--six">
+                    <div class="hex__content">
+                        <h4 class="hex__title">Консультации и техподдержка</h4>
+                        <p class="hex__descr">Наши специалисты помогут в подборе необходимых материалов для ваших объектов, проведут индивидуальную консультацию о характеристиках продукции и особенностях применения. Мы не просто продаем товар, мы помогаем решать проблемы.</p>
+                    </div>
+                    <div class="bg1"></div>
+                    <div class="bg2"></div>
+                </div>
+            </a>
+            <a href="#hex">
+                <div class="hex hex--seven">
+                    <div class="hex__content">
+                        <h4 class="hex__title">Собственный импорт</h4>
+                        <p class="hex__descr">Наша компания является непосредственным импортером и торговым представители торговых марок Kudo, Polynor, Cold Off в Украине. Мы сотрудничаем с многими украинскими компаниями- операторами рынка теплоизоляционных материалов и услуг.</p>
+                    </div>
+                    <div class="bg1"></div>
+                    <div class="bg2"></div>
+                </div>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
